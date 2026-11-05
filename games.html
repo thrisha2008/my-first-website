@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thrisha's Games</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">👩 About Me</a>
+    <a href="friends.html">👯 Friends Wall</a>
+    <a href="games.html" class="on">🎮 Games</a>
+    <a href="secret.html">🤫 Secret</a>
+  </nav>
+
+  <main>
+    <h2>🎮 Crazy Game Zone</h2>
+    <p class="sub">Three silly games for my friends!</p>
+
+    <div class="box">
+      <h3>🎯 Catch Me If You Can!</h3>
+      <p>Click the emoji every time it jumps. Score: <b id="score">0</b> (confetti every 10!)</p>
+      <div id="arena"><div id="target">🐙</div></div>
+    </div>
+
+    <div class="box">
+      <h3>💞 Friendship Meter</h3>
+      <p>Type your name to see how strong our friendship is!</p>
+      <input type="text" id="friendName" placeholder="Your name...">
+      <br>
+      <button class="btn pink" id="meterBtn">Check it!</button>
+      <div class="meter"><div id="meterBar"></div></div>
+      <div class="result" id="meterText"></div>
+    </div>
+
+    <div class="box">
+      <h3>🔮 Thrisha's Fortune Teller</h3>
+      <p>Press the button to see your future!</p>
+      <button class="btn" id="fortuneBtn">Tell my fortune ✨</button>
+      <div class="result" id="fortune"></div>
+    </div>
+  </main>
+
+  <footer>Made with 💖 by Thrisha Suvarna</footer>
+  <script src="script.js"></script>
+</body>
+</html>

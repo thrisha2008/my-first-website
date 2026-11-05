@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fredoka',sans-serif;color:#fff;min-height:100vh;overflow-x:hidden;
+background:linear-gradient(-45deg,#1a0033,#5b00b5,#ff0080,#00c3ff);background-size:400% 400%;animation:bg 14s ease infinite}
+@keyframes bg{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+body.party{animation:bg 1.5s linear infinite}
+body.party .name span,body.party h2{animation:rainbow .6s linear infinite}
+@keyframes rainbow{to{filter:hue-rotate(360deg)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:14px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px)}
+nav a{color:#fff;text-decoration:none;font-weight:700;padding:8px 18px;border-radius:30px;border:3px solid #fff;transition:.25s}
+nav a:hover,nav a.on{background:#ffe600;color:#1a0033;transform:rotate(-5deg) scale(1.12);border-color:#ffe600}
+
+/* LAYOUT */
+main{max-width:1100px;margin:0 auto;padding:50px 20px;text-align:center}
+h2{font-family:'Bangers',cursive;font-size:3.2rem;letter-spacing:3px;color:#ffe600;text-shadow:4px 4px 0 #ff0080;margin-bottom:10px}
+.sub{font-size:1.2rem;margin-bottom:35px}
+
+/* HOME */
+.hello{font-size:1.6rem;margin-top:30px}
+.name{font-family:'Bangers',cursive;font-size:clamp(3rem,11vw,8rem);line-height:1;letter-spacing:4px;margin:10px 0 25px}
+.name span{display:inline-block;transition:.2s;cursor:default;text-shadow:5px 5px 0 #ff0080}
+.name span:hover{transform:translateY(-25px) rotate(15deg) scale(1.4);color:#ffe600}
+.btn{display:inline-block;margin:10px;padding:16px 38px;font:700 1.4rem 'Fredoka',sans-serif;color:#1a0033;background:#ffe600;border:none;border-radius:50px;box-shadow:0 7px 0 #b39e00;cursor:pointer;text-decoration:none;transition:.15s}
+.btn:hover{transform:translateY(3px) scale(1.06);box-shadow:0 4px 0 #b39e00}
+.btn:active{transform:translateY(7px);box-shadow:none}
+.btn.pink{background:#ff4da6;color:#fff;box-shadow:0 7px 0 #a0005a}
+.big-emoji{font-size:6rem;display:inline-block;animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.marquee{margin-top:40px;background:#ffe600;color:#1a0033;font-weight:700;font-size:1.3rem;padding:10px;overflow:hidden;white-space:nowrap;transform:rotate(-1.5deg)}
+.marquee span{display:inline-block;animation:slide 14s linear infinite}
+@keyframes slide{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
+
+/* FLIP CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px}
+.flip{height:230px;perspective:900px;cursor:pointer}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
+.flip:hover .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;border-radius:25px;border:5px solid #fff;backface-visibility:hidden;font-size:1.2rem}
+.face b{font-size:3.5rem}
+.front{background:#ff0080}.back{background:#00b4d8;transform:rotateY(180deg)}
+.flip:nth-child(2) .front{background:#7b2ff7}.flip:nth-child(3) .front{background:#f59f00}
+.flip:nth-child(4) .front{background:#12b886}.flip:nth-child(5) .front{background:#e03131}
+.flip:nth-child(6) .front{background:#1c7ed6}
+
+/* FRIENDS */
+.friend{background:rgba(255,255,255,.15);border:4px dashed #ffe600;border-radius:25px;padding:25px;cursor:pointer;transition:.3s}
+.friend:hover{transform:rotate(-3deg) scale(1.06);background:rgba(255,255,255,.28)}
+.friend .av{font-size:4rem}
+.friend h3{font-size:1.5rem;margin:8px 0}
+.friend p{min-height:55px;color:#ffe600;font-weight:600}
+
+/* GAMES */
+.box{background:rgba(0,0,0,.35);border:5px solid #fff;border-radius:30px;padding:30px;margin:0 auto 40px;max-width:760px}
+.box h3{font-size:2rem;color:#ffe600;margin-bottom:12px}
+#arena{position:relative;height:300px;background:rgba(255,255,255,.12);border-radius:20px;overflow:hidden;margin-top:15px}
+#target{position:absolute;font-size:3.5rem;cursor:pointer;user-select:none;transition:.15s}
+#target:active{transform:scale(.6)}
+input[type=text]{font:600 1.2rem 'Fredoka',sans-serif;padding:12px 20px;border-radius:40px;border:4px solid #ffe600;outline:none;width:min(320px,90%);margin:10px 0}
+.result{font-size:1.5rem;font-weight:700;margin-top:15px;min-height:40px}
+.meter{height:30px;background:#fff3;border-radius:20px;overflow:hidden;margin-top:12px}
+.meter div{height:100%;width:0;background:linear-gradient(90deg,#ff0080,#ffe600);transition:width 1.2s}
+
+/* SECRET */
+.secret-msg{font-size:1.5rem;line-height:1.7;max-width:650px;margin:25px auto;background:#0006;padding:25px;border-radius:25px;border:4px solid #ffe600}
+
+/* EFFECTS */
+.confetti{position:fixed;top:-30px;font-size:1.8rem;pointer-events:none;z-index:99;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+.trail{position:fixed;pointer-events:none;z-index:99;font-size:1.5rem;animation:fade .9s forwards}
+@keyframes fade{to{opacity:0;transform:translateY(30px) scale(.3)}}
+footer{text-align:center;padding:25px;background:rgba(0,0,0,.45);font-weight:600}
+@media(max-width:600px){nav a{padding:6px 12px}}
